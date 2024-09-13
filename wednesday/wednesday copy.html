@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving GIF Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .gif-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('pictures/meme-polish-cow.gif');
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-background"></div>
+
+    <script>
+        function moveGIF() {
+            var gifElement = document.querySelector('.gif-background');
+            gifElement.style.backgroundPosition = 'center';
+            
+
+            gifElement.style.backgroundPositionX = '50%';
+            
+            gifElement.style.backgroundPositionY = '50%';
+        }
+
+        setInterval(moveGIF, 60); 
+    </script>
+</body>
+</html>
